@@ -1,0 +1,40 @@
+﻿<Window x:Name="wndMain" x:Class="ZeroHex_Reader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZeroHex_Reader"
+        mc:Ignorable="d"
+        Title="ZeroHex Reader - (Jay Whaley's Coding Submission)" Height="284.372" Width="575.63"
+        Background="Black">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="grd_Background" Stretch="Uniform" Opacity="0.4"/>
+        </Grid.Background>
+        <ProgressBar x:Name="progbar" Height="49.688" Margin="10,194.812,10.179,0" VerticalAlignment="Top" Background="DimGray" Visibility="Collapsed">
+            <ProgressBar.Foreground>
+                <SolidColorBrush Color="Red" Opacity="0.4"/>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="20" VerticalAlignment="Top" Width="148.8" Click="BtnStart_Click" Height="50.3" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF4B2626" Offset="0"/>
+                    <GradientStop Color="#FFD20909" Offset="1"/>
+                    <GradientStop Color="#FF823232" Offset="0.39"/>
+                    <GradientStop Color="#FFAF1F1F" Offset="0.744"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblProg" HorizontalAlignment="Left" Margin="10,148.519,0,0" VerticalAlignment="Top" Width="550.321" Height="41.293" FontSize="18" Foreground="#FFD1E5F8"
+               Content="Processing file..." Visibility="{Binding ElementName=progbar, Path=Visibility}"/>
+    </Grid>
+</Window>
